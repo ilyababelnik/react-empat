@@ -1,0 +1,218 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.footer {
+  margin-top: 150px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: 376px) {
+    margin-top: 75px;
+  }
+
+  &__wrapper {
+    @media screen and (min-width: 1321px) {
+      max-width: 1232px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1320px) {
+      @include wrapper-constructor;
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: 881px) and (max-width: 1024px) {
+      max-width: 792px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 377px) and (max-width: 880px) {
+      @include wrapper-constructor;
+    }
+
+    @media screen and (max-width: 376px) {
+      max-width: 303px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &_color {
+      background: $secondary-background-color;
+      padding: 50px 0;
+      border-top: $accent-border;
+      border-bottom: $accent-border;
+    }
+
+    &_text {
+      height: 44px;
+      @include flex-constructor($justify: center);
+
+      @media screen and (min-width: 1321px) {
+        max-width: 1232px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 1025px) and (max-width: 1320px) {
+        @include wrapper-constructor;
+        max-width: 100%;
+      }
+
+      @media screen and (min-width: 881px) and (max-width: 1024px) {
+        max-width: 792px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 377px) and (max-width: 880px) {
+        @include wrapper-constructor;
+      }
+
+      @media screen and (max-width: 376px) {
+        max-width: 303px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__columns {
+    @include flex-constructor($align: flex-start);
+    padding: 0px;
+
+    @media screen and (max-width: 1024px) {
+      padding: 0px 0px 10px;
+    }
+
+    @media screen and (max-width: 730px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__first_column {
+    @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 28px);
+    padding: 0px;
+    max-width: 350px;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 376px;
+      gap: 27px;
+    }
+
+    @media screen and (max-width: 730px) {
+      align-items: center;
+    }
+  }
+
+  &__second_column {
+    @include flex-constructor($direction: column, $justify: center, $gap: 25px);
+    padding: 0px;
+    max-width: 400px;
+  }
+
+  &__third_column {
+    @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 20px);
+    padding: 0px;
+    max-width: 349px;
+
+    @media screen and (max-width: 730px) {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @extend %desktop-h3-text;
+  }
+
+  &__motto {
+    @include desktop-h4-text($color: $main-text-color);
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h4-text($color: $main-text-color);
+    }
+  }
+
+  &__social {
+    &_wrapper {
+      @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 20px);
+      padding: 0px 0px 10px;
+
+      @media screen and (max-width: 1024px) {
+        gap: 14px;
+      }
+
+      @media screen and (max-width: 730px) {
+        align-items: center;
+      }
+    }
+
+    &_buttons {
+      @include flex-constructor($justify: normal, $gap: 18px);
+      padding: 0px;
+    }
+  }
+
+  &__nav_link__wrapper {
+    @include flex-constructor($direction: column);
+    height: 350px;
+  }
+
+  &__contact {
+    &_block {
+      @include flex-constructor($direction: column, $justify: normal, $align: flex-start, $gap: 30px);
+      padding: 0px;
+
+      @media screen and (max-width: 1024px) {
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 730px) {
+        align-items: center;
+        margin-top: 30px;
+      }
+    }
+
+    &_wrapper {
+      @include flex-constructor($justify: normal, $gap: 10px);
+      padding: 0px;
+    }
+
+    &_image_wrapper {
+      max-width: 30px;
+      max-height: 40px;
+
+      @media screen and (max-width: 1024px) {
+        max-width: 25px;
+        max-height: 35px;
+      }
+    }
+
+    &_image {
+      width: 100%;
+      height: 100%;
+    }
+
+    &_link {
+      @include desktop-h4-text($color: $main-text-color);
+
+      @media screen and (max-width: 1024px) {
+        @include tablet-h4-text($color: $main-text-color);
+      }
+    }
+  }
+
+  &__text {
+    @include desktop-h4-text($color: $main-text-color);
+    text-align: center;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h4-text($color: $main-text-color);
+    }
+  }
+}

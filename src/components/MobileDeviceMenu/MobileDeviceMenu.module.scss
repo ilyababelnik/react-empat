@@ -1,0 +1,205 @@
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+@import 'styles/base/mixins';
+
+.nav {
+  &__link {
+    @include desktop-h4-text($color: $main-text-color);
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__burger_first,
+  &__burger_second,
+  &__burger_third {
+    width: 20px;
+    height: 3px;
+    background-color: $main-background-color;
+  }
+
+  &__burger_first,
+  &__burger_third {
+    margin: 0 auto;
+  }
+
+  &__burger_second {
+    margin: 5px auto;
+  }
+
+  &__burger_wrapper {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: $circle-border-radius;
+    z-index: 5;
+    background: $accent-color;
+    border-radius: 100;
+    transition: $main-transition-effect;
+    -moz-transition: $main-transition-effect;
+    -webkit-transition: $main-transition-effect;
+    -o-transition: $main-transition-effect;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.nav__burger_wrapper.active .nav__burger_first {
+  transform: translateY(6px) translateX(0) rotate(45deg);
+}
+
+.nav__burger_wrapper.active .nav__burger_second {
+  opacity: 0;
+}
+
+.nav__burger_wrapper.active .nav__burger_third {
+  transform: translateY(-10px) translateX(0) rotate(-45deg);
+}
+
+.nav__burger_wrapper div {
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+}
+
+.overlay {
+  position: fixed;
+  background: $main-background-color;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0vh;
+  visibility: hidden;
+  transition: $navigation-transition-effect;
+  -moz-transition: $navigation-transition-effect;
+  -webkit-transition: $navigation-transition-effect;
+  -o-transition: $navigation-transition-effect;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.overlay.open {
+  visibility: visible;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.overlay.open li {
+  -webkit-animation: fadeInFromBottom 0.5s ease forwards;
+  animation: fadeInFromBottom 0.5s ease forwards;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.overlay.open li:nth-of-type(2) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.overlay.open li:nth-of-type(3) {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+.overlay.open li:nth-of-type(4) {
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+
+.overlay.open li:nth-of-type(5) {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+
+.overlay.open li:nth-of-type(6) {
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+.overlay nav {
+  position: relative;
+  height: 50%;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+
+.overlay ul li a {
+  display: block;
+  position: relative;
+  font-family: $main-font;
+  text-decoration: none;
+}
+
+.overlay ul li a:hover:after,
+.overlay ul li a:focus:after,
+.overlay ul li a:active:after {
+  width: 100%;
+}
+
+.overlay ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: $accent-color;
+  transition: 0.35s;
+}
+
+@-webkit-keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    top: 20%;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    top: 20%;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.call_button__icon {
+  width: 100%;
+  height: 100%;
+
+  &_wrapper {
+    width: 50px;
+    height: 50px;
+  }
+}

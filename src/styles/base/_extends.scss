@@ -1,0 +1,67 @@
+@import './variables';
+@import './fonts';
+
+%desktop-nav-link {
+  color: $main-text-color;
+  font-family: $main-font;
+  font-size: $font-size-medium;
+  font-weight: $medium-bold;
+  font-style: $text-style;
+  line-height: $line-height-medium;
+}
+
+%desktop-h3-text {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  font-size: $font-size-desktop-h3;
+  line-height: $line-height-large;
+  color: $main-text-color;
+
+  @media screen and (max-width: 1024px) {
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+  }
+
+  @media screen and (max-width: 376px) {
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+}
+
+%desktop-p-text {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $regular-bold;
+  font-size: $font-size-desktop-p;
+  line-height: $line-height-medium;
+  color: $secondary-text-color;
+  text-align: center;
+
+  @media screen and (max-width: 1300px) {
+    text-align: left;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: $font-size-small;
+  }
+
+  @media screen and (max-width: 376px) {
+    font-size: $font-size-extra-small;
+    line-height: $line-height-small;
+  }
+}
+
+%logo-text {
+  color: $accent-color;
+  font-family: $main-font;
+  font-size: $font-size-logo;
+  font-weight: $medium-bold;
+  font-style: $text-style;
+  line-height: $line-height-logo;
+}
+
+%title-decoration {
+  padding: 0px 0px 0px 20px;
+  border-left: $title-border;
+}

@@ -1,0 +1,153 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.section_possibility__image_left,
+.section_possibility__image_right {
+  @include flex-constructor($justify: center, $gap: 61px);
+  padding: 50px 100px;
+  background: $secondary-background-color;
+  box-shadow: $default-box-shadow;
+  border-radius: $main-border-radius;
+  margin-top: 150px;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    box-shadow: $hover-box-shadow;
+  }
+
+  @media screen and (max-width: 1024px) {
+    justify-content: space-between;
+    padding: 50px 101px;
+    gap: 37px;
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: 740px) {
+    justify-content: center;
+    padding: 50px;
+    gap: 37px;
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: 376px) {
+    padding: 30px 10px 40px;
+    gap: 3px;
+    margin-top: 40px;
+  }
+}
+
+.section_possibility__image_right {
+  flex-direction: row-reverse;
+}
+
+.section_possibility {
+  &__image {
+    height: 100%;
+
+    &_wrapper {
+      width: 295px;
+      height: 395px;
+
+      @media screen and (max-width: 1024px) {
+        width: 200px;
+        height: 268px;
+      }
+    }
+  }
+
+  &__content_wrapper {
+    @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 16px);
+    max-width: 610px;
+    padding: 0px 0px 22px;
+
+    @media screen and (max-width: 1024px) {
+      padding: 0px 0px 15px;
+      gap: 18px;
+      max-width: 353px;
+    }
+
+    @media screen and (max-width: 740px) {
+      align-items: center;
+    }
+
+    @media screen and (max-width: 376px) {
+      padding: 0px 0px 15px;
+    }
+  }
+
+  &__content_text {
+    @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 5px);
+    padding: 0px 0px 13px;
+    max-width: 610px;
+
+    @media screen and (max-width: 1024px) {
+      padding: 0px;
+      max-width: 353px;
+    }
+
+    @media screen and (max-width: 740px) {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include desktop-h2-text($color: $main-text-color);
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h2-text($color: $main-text-color);
+    }
+
+    @media screen and (max-width: 740px) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @include desktop-h4-text;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h4-text;
+    }
+
+    @media screen and (max-width: 740px) {
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+
+    &_wrapper {
+      @include flex-constructor($justify: center);
+      width: 70px;
+      height: 70px;
+      background: $main-background-color;
+      border: $dark-border;
+      border-radius: $circle-border-radius;
+    }
+  }
+
+  &__main_title {
+    @include mobile-h2-text($color: $main-text-color);
+    margin-top: 75px;
+    margin-bottom: 50px;
+    @extend %title-decoration;
+  }
+}
+
+.secondary_button__wrapper {
+  @include flex-constructor($justify: center, $gap: 9px);
+
+  @media screen and (max-width: 1024px) {
+    gap: 2px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    gap: 10px;
+  }
+}

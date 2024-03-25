@@ -1,0 +1,45 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.section_advantages {
+  @include flex-constructor($direction: column, $justify: normal, $align: normal, $gap: 75px);
+  padding: 0px;
+
+  @media screen and (max-width: 376px) {
+    gap: 50px;
+  }
+
+  &__title {
+    @include desktop-h2-text($color: $main-text-color);
+    @extend %title-decoration;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h2-text($color: $main-text-color);
+    }
+
+    @media screen and (max-width: 376px) {
+      @include mobile-h2-text($color: $main-text-color);
+    }
+  }
+
+  &__card_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1300px) {
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 376px) {
+      gap: 40px;
+    }
+  }
+}

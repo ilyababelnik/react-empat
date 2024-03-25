@@ -1,0 +1,28 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.wrapper {
+  @media screen and (min-width: 1321px) {
+    max-width: 1232px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1320px) {
+    @include wrapper-constructor;
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: 792px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 377px) and (max-width: 880px) {
+    @include wrapper-constructor;
+  }
+
+  @media screen and (max-width: 376px) {
+    max-width: 303px;
+    margin: 0 auto;
+  }
+}

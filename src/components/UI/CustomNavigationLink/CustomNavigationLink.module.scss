@@ -1,0 +1,26 @@
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.link {
+  @extend %desktop-nav-link;
+  margin: 6px 13px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: $accent-color;
+    transition: $main-transition-effect;
+    -moz-transition: $main-transition-effect;
+    -webkit-transition: $main-transition-effect;
+    -o-transition: $main-transition-effect;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}

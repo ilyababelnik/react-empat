@@ -1,0 +1,7 @@
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+@import 'styles/base/mixins';
+
+.header__menu_wrapper {
+  @include flex-constructor($gap: 82);
+}

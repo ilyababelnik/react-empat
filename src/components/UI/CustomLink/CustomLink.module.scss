@@ -1,0 +1,89 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+
+.secondary {
+  @include flex-constructor($justify: center, $gap: 9px);
+  padding: 10px calc(20px + (10 * (100vw - 1440px) / 416)) 10px calc(19px + (10 * (100vw - 1440px) / 416));
+  background: $main-background-color;
+  border: $dark-border;
+  border-radius: $main-border-radius;
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  font-size: calc(16px + 6 * (100vw / 1440));
+  line-height: $line-height-medium;
+  color: $main-text-color;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    background: $secondary-background-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px;
+    gap: 2px;
+    background: $main-background-color;
+    border: $dark-border;
+    border-radius: $main-border-radius;
+    font-family: $main-font;
+    font-style: $text-style;
+    font-weight: $semi-bold;
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+    color: $main-text-color;
+  }
+}
+
+.primary {
+  @include flex-constructor($justify: center, $gap: 10px);
+  padding: calc(20px + (10 * (100vw - 1440px) / 416)) 20px calc(20px + (10 * (100vw - 1440px) / 416)) 20px;
+  background: $accent-color;
+  border-radius: $main-border-radius;
+  font-family: $main-border-radius;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  font-size: calc(16px + 6 * (100vw / 1440));
+  line-height: $line-height-medium;
+  color: $button-text-color;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    background: $accent-color-hover;
+    color: $main-text-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include flex-constructor($justify: center, $gap: 10px);
+    padding: 10px 20px;
+    background: $accent-color;
+    border-radius: $main-border-radius;
+    font-family: $main-font;
+    font-style: $text-style;
+    font-weight: $semi-bold;
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+    color: $button-text-color;
+  }
+
+  @media screen and (max-width: 730px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 12px 20px;
+    font-size: $font-size-small;
+  }
+}
+
+.secondary_icon {
+  @include flex-constructor($justify: center, $gap: 10);
+  background: $main-background-color;
+  border: $dark-border;
+  border-radius: $main-border-radius;
+}

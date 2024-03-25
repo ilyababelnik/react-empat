@@ -1,0 +1,25 @@
+@import './base/reset';
+@import './base/variables';
+@import './base/fonts';
+@import './base/extends';
+@import './base/mixins';
+
+body {
+  font-family: $main-font;
+  background-color: $main-background-color;
+}
+
+html {
+  scrollbar-color: #6c60fe white;
+  scrollbar-face-color: #6c60fe;
+  scrollbar-width: thin;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6c60fe;
+}

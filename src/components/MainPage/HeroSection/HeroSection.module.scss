@@ -1,0 +1,148 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.hero {
+  @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 30px);
+  position: relative;
+  border-radius: $large-border-radius;
+  min-height: 420px;
+  background-color: $secondary-background-color;
+  box-shadow: $default-box-shadow;
+  z-index: 1;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: 730px) {
+    align-items: center;
+  }
+
+  @media screen and (max-width: 460px) {
+    margin: 75px 0;
+  }
+
+  &:hover {
+    box-shadow: $hover-box-shadow;
+  }
+
+  &::before {
+    content: '';
+    background: url('/femida.png');
+    position: absolute;
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+
+    @media screen and (max-width: 1024px) {
+      right: -80px;
+    }
+
+    @media screen and (max-width: 618px) {
+      background-size: cover;
+    }
+  }
+
+  &__content_wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 55%;
+    padding: 50px 0 68px 104px;
+    @include flex-constructor($direction: column, $justify: start, $align: start, $gap: 10px);
+
+    @media screen and (min-width: 1025px) and (max-width: 1345px) {
+      max-width: 50%;
+    }
+
+    @media screen and (min-width: 770px) and (max-width: 1024px) {
+      max-width: 67%;
+    }
+
+    @media screen and (min-width: 731) and (max-width: 769px) {
+      max-width: 75%;
+    }
+
+    @media screen and (max-width: 730px) {
+      justify-content: center;
+      align-items: center;
+      padding: 50px 10px 60px;
+      max-width: 67%;
+    }
+
+    @media screen and (max-width: 460px) {
+      max-width: 76%;
+    }
+  }
+
+  &__text_wrapper {
+    @include flex-constructor($direction: column, $justify: normal, $align: flex-start, $gap: 20px);
+    padding: 0px 0px 17px;
+
+    @media screen and (max-width: 730px) {
+      justify-content: center;
+      align-items: center;
+      padding: 0px 0px 20px;
+    }
+  }
+
+  &__title {
+    @include desktop-h1-text;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h1-text;
+    }
+
+    @media screen and (max-width: 730px) {
+      text-align: center;
+    }
+
+    @media screen and (max-width: 376px) {
+      @include mobile-h1-text;
+    }
+
+    &_company {
+      @include desktop-h1-text($color: $accent-color);
+
+      @media screen and (max-width: 1024px) {
+        @include tablet-h1-text($color: $accent-color);
+      }
+
+      @media screen and (max-width: 376px) {
+        @include mobile-h1-text($color: $accent-color);
+      }
+    }
+  }
+
+  &__subtitle {
+    @extend %desktop-h3-text;
+
+    @media screen and (max-width: 730px) {
+      text-align: center;
+    }
+  }
+
+  &__motto {
+    @include desktop-h4-text;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h4-text;
+    }
+
+    @media screen and (max-width: 730px) {
+      text-align: center;
+    }
+  }
+}

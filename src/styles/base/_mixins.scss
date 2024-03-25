@@ -1,0 +1,83 @@
+@mixin wrapper-constructor($margin-vertical: 0, $margin-horizontal: 5%) {
+  margin: $margin-vertical $margin-horizontal;
+}
+
+@mixin flex-constructor($direction: row, $justify: space-between, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin desktop-h1-text($color: $main-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $extreme-bold;
+  font-size: $font-size-desktop-h1;
+  line-height: $line-height-h1;
+  color: $color;
+}
+
+@mixin tablet-h1-text($color: $main-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $extreme-bold;
+  font-size: $font-size-tablet-h1;
+  line-height: $line-height-h1-tablet;
+  color: $color;
+}
+
+@mixin mobile-h1-text($color: $main-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  font-size: $font-size-mobile-h1;
+  line-height: $line-height-h1-mobile;
+  color: $color;
+}
+
+@mixin desktop-h2-text($color: $accent-color) {
+  color: $color;
+  font-family: $main-font;
+  font-size: $font-size-desktop-h2;
+  font-weight: $medium-bold;
+  font-style: $text-style;
+  line-height: $line-height-h2;
+}
+
+@mixin tablet-h2-text($color: $accent-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $medium-bold;
+  font-size: $font-size-tablet-h2;
+  line-height: $line-height-h2-tablet;
+  color: $color;
+}
+
+@mixin mobile-h2-text($color: $accent-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $medium-bold;
+  font-size: $font-size-mobile-h2;
+  line-height: $line-height-h2-mobile;
+  color: $color;
+}
+
+@mixin desktop-h4-text($color: $secondary-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $regular-bold;
+  font-size: $font-size-desktop-h4;
+  line-height: $line-height-medium;
+  color: $color;
+}
+
+@mixin tablet-h4-text($color: $secondary-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $regular-bold;
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  color: $color;
+}

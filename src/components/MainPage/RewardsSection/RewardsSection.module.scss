@@ -1,0 +1,71 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.section_rewards {
+  background: $secondary-background-color;
+  border-top: $accent-border;
+  border-bottom: $accent-border;
+  margin: 150px 0;
+  padding: 50px 0 72px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 50px 0 62px;
+    margin: 100px 0;
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 31px 51px 20px;
+    margin: 75px 0;
+  }
+
+  &__title {
+    @include desktop-h2-text($color: $main-text-color);
+    text-align: center;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h2-text($color: $main-text-color);
+    }
+  }
+
+  &__list {
+    @include flex-constructor($align: flex-start, $justify: center, $gap: 50px);
+    padding: 0px;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 19px 55px;
+      gap: 26px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    &_wrapper {
+      max-width: 200px;
+      max-height: 200px;
+
+      @media screen and (max-width: 1024px) {
+        width: 150px;
+        height: 150px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+.wrapper {
+  @include wrapper-constructor;
+  @include flex-constructor($direction: column, $justify: center, $gap: 30px);
+
+  @media screen and (max-width: 460px) {
+    gap: 0;
+  }
+}

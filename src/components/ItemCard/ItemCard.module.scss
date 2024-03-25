@@ -1,0 +1,74 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.card,
+.card_feedback {
+  @include flex-constructor($direction: column, $justify: start, $gap: 12px);
+  padding: 36px 30px 30px;
+  max-width: 350px;
+  background: $secondary-background-color;
+  box-shadow: $default-box-shadow;
+  border-radius: $large-border-radius;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    box-shadow: $hover-box-shadow;
+  }
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: row;
+    padding: 30px;
+    gap: 15px;
+    min-width: 100%;
+  }
+}
+
+.card_feedback {
+  @media screen and (max-width: 730px) {
+    align-items: flex-start;
+  }
+}
+
+.card {
+  &__image {
+    height: 100%;
+
+    &_wrapper {
+      width: 97px;
+      height: 97px;
+      border: $accent-border;
+      border-radius: $circle-border-radius;
+      background: $secondary-background-color;
+
+      @media screen and (max-width: 1024px) {
+        width: 55px;
+        height: 55px;
+      }
+    }
+  }
+
+  &__text_wrapper {
+    @include flex-constructor($direction: column, $justify: normal, $gap: 5px);
+
+    @media screen and (max-width: 1300px) {
+      gap: 0px;
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: 376px) {
+      padding: 0px 0px 4px;
+    }
+  }
+
+  &__title {
+    @extend %desktop-h3-text;
+  }
+
+  &__text {
+    @extend %desktop-p-text;
+  }
+}
