@@ -1,6 +1,7 @@
 {
   "name": "empat-school-fe",
   "private": true,
+  "homepage": "https://ilyababelnik.github.io/react-empat/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -8,7 +9,9 @@
     "build": "tsc && vite build",
     "lint": "eslint src/**/*.{ts,tsx,scss} --fix",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{ts,tsx,scss}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,scss}\"",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "react": "^18.2.0",
