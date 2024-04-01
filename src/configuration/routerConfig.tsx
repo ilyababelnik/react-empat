@@ -3,11 +3,13 @@ import ErrorPage from 'pages/ErrorPage';
 import Layout from 'pages/Layout';
 import MainPage from 'pages/MainPage';
 import ServicesPage from 'pages/ServicesPage';
-import { Route, createHashRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
-const router = createHashRouter(
+const basename = '/react-empat';
+
+const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/react-empat">
+    <Route path="/">
       <Route
         index
         element={
@@ -18,7 +20,7 @@ const router = createHashRouter(
       />
 
       <Route
-        path="/react-empat/contact"
+        path="/contact"
         element={
           <Layout simpleFooterMod>
             <ContactPage />
@@ -27,7 +29,7 @@ const router = createHashRouter(
       />
 
       <Route
-        path="/react-empat/services"
+        path="/services"
         element={
           <Layout>
             <ServicesPage />
@@ -45,6 +47,7 @@ const router = createHashRouter(
       />
     </Route>,
   ),
+  {basename}
 );
 
 export default router;

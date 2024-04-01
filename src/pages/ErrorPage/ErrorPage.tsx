@@ -16,7 +16,7 @@ const ErrorPage: React.FC = () => {
           <span className={style.error__second_number}>0</span>
           <span className={style.error__third_number}>4</span>
         </div>
-        <CustomLink link="/react-empat" classname="secondary">
+        <CustomLink link="/" classname="secondary">
           Повернутися на головну
         </CustomLink>
       </section>

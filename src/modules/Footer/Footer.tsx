@@ -15,19 +15,19 @@ const Footer: React.FC<IFooter> = ({ simpleFooterMod = false }) => {
       <div className={style.footer__wrapper_color}>
         <div className={style.footer__wrapper}>
           {simpleFooterMod ? (
-            <CustomLink link="/react-empat" classname="secondary">
+            <CustomLink link="/" classname="secondary">
               Повернутися на голову
             </CustomLink>
           ) : (
             <div className={style.footer__columns}>
               <div className={style.footer__first_column}>
-                <CustomLink link="/react-empat/contact" classname="primary">
+                <CustomLink link="/contact" classname="primary">
                   Замовити консультацію
                 </CustomLink>
                 {width > 729 ? <h4 className={style.footer__motto}>Зробимо спілкування з офіційними органами влади України максимально зручним та зрозумілим.</h4> : false}
                 <SocialButtonsBlock />
                 {width > 729 ? (
-                  <CustomLink link="/react-empat" classname="secondary">
+                  <CustomLink link="/" classname="secondary">
                     Головна сторінка
                   </CustomLink>
                 ) : (
@@ -62,7 +62,7 @@ const Footer: React.FC<IFooter> = ({ simpleFooterMod = false }) => {
                 </div>
                 <MapFrame classname="map" />
                 {width < 729 ? (
-                  <CustomLink link="/react-empat" classname="secondary">
+                  <CustomLink link="/" classname="secondary">
                     Головна сторінка
                   </CustomLink>
                 ) : (

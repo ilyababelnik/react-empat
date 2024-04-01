@@ -2,7 +2,7 @@ export const mainMenuLinks = [
   {
     id: 1,
     name: 'Головна',
-    address: '/react-empat',
+    address: '/',
   },
   {
     id: 2,
@@ -12,7 +12,7 @@ export const mainMenuLinks = [
   {
     id: 3,
     name: 'Послуги',
-    address: '/react-empat/services',
+    address: '/services',
   },
   {
     id: 4,
@@ -27,6 +27,6 @@ export const mainMenuLinks = [
   {
     id: 6,
     name: 'Контакти',
-    address: '/react-empat/contact',
+    address: '/contact',
   },
 ];
