@@ -1,7 +1,6 @@
 {
   "name": "empat-school-fe",
   "private": true,
-  "homepage": "/react-empat",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

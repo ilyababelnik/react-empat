@@ -5,8 +5,6 @@ import MainPage from 'pages/MainPage';
 import ServicesPage from 'pages/ServicesPage';
 import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
-const basename = '/react-empat';
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
@@ -47,7 +45,6 @@ const router = createBrowserRouter(
       />
     </Route>,
   ),
-  {basename}
 );
 
 export default router;
