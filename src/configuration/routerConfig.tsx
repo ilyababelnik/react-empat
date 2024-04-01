@@ -3,9 +3,9 @@ import ErrorPage from 'pages/ErrorPage';
 import Layout from 'pages/Layout';
 import MainPage from 'pages/MainPage';
 import ServicesPage from 'pages/ServicesPage';
-import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, createHashRouter, createRoutesFromElements } from 'react-router-dom';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/react-empat">
       <Route
