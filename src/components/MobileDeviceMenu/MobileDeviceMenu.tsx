@@ -1,14 +1,10 @@
 import { useRef } from 'react';
-import style from './MobileDeviceMenu.module.scss';
 import { mainMenuLinks } from 'constants/mainMenuLinks';
 import { Link } from 'react-router-dom';
-import CustomLink from 'components/UI/CustomLink';
-import icon from '/call-button.png';
-
-interface IMobileDeviceMenu {
-  scroll: boolean;
-  setScroll: (param: boolean) => void;
-}
+import { IMobileDeviceMenu } from 'types/IMobileDeviceMenu';
+import CallButtonText from 'ui/CallButtonText';
+import CallButtonIcon from 'ui/CallButtonIcon';
+import style from './MobileDeviceMenu.module.scss';
 
 const MobileDeviceMenu: React.FC<IMobileDeviceMenu> = ({ scroll, setScroll }) => {
   const width = window.innerWidth;
@@ -49,17 +45,8 @@ const MobileDeviceMenu: React.FC<IMobileDeviceMenu> = ({ scroll, setScroll }) =>
 
   return (
     <>
-      {width > 460 ? (
-        <CustomLink link="tel:0501112233" classname="secondary">
-          Подзвонити
-        </CustomLink>
-      ) : (
-        <CustomLink link="tel:0501112233" classname="secondary_icon">
-          <div className={style.call_button__icon_wrapper}>
-            <img src={icon} alt="Подзвонити" title="Подзвонити" className={style.call_button__icon} />
-          </div>
-        </CustomLink>
-      )}
+      {width > 460 ? <CallButtonText /> : <CallButtonIcon />}
+
       <button type="button" className={style.nav__burger_wrapper} onClick={handleMobileClickMenu} ref={buttonRef}>
         <div className={style.nav__burger_first} />
         <div className={style.nav__burger_second} />

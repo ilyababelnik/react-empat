@@ -1,0 +1,63 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.telephone {
+  grid-area: telephone;
+  display: flex;
+  gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+.address {
+  grid-area: address;
+  display: flex;
+  gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+.mail {
+  grid-area: mail;
+  display: flex;
+  gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+.schedule {
+  grid-area: schedule;
+  display: flex;
+  gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+.title {
+  @include desktop-h4-text($color: $accent-color, $fontWeight: $extreme-bold);
+
+  @media screen and (max-width: 1024px) {
+    @include tablet-h4-text($color: $accent-color, $fontWeight: $extreme-bold);
+  }
+}
+
+.text {
+  @extend %label;
+}
+
+.image {
+  @extend %image;
+
+  &__wrapper {
+    @include image-wrapper($width: 25px, $height: 25px);
+  }
+}

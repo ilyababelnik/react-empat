@@ -1,0 +1,49 @@
+@import 'styles/base/variables';
+@import 'styles/base/fonts';
+@import 'styles/base/extends';
+@import 'styles/base/mixins';
+
+.textarea {
+  @extend %form-field;
+  resize: none;
+  @extend %label;
+
+  &::placeholder {
+    @extend %desktop-p-text;
+    text-align: left;
+  }
+
+  &:not(:placeholder-shown):focus,
+  &:focus {
+    border: $accent-border;
+  }
+
+  &__error {
+    resize: none;
+    @extend %error-field;
+    @extend %label;
+  }
+
+  &__label_wrapper {
+    @include flex-constructor($direction: column, $justify: normal, $align: flex-start, $gap: 5px);
+    width: 100%;
+    margin: 15px 0px 25px;
+    @extend %label;
+
+    @media screen and (max-width: 1024px) {
+      margin: 5px 0px 25px;
+    }
+  }
+
+  &__error_message {
+    @include desktop-p-text-colorful($color: $error-color);
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-p-text-colorful($color: $error-color);
+    }
+
+    @media screen and (max-width: 376px) {
+      @include mobile-p-text-colorful($color: $error-color);
+    }
+  }
+}

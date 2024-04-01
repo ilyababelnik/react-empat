@@ -1,0 +1,87 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+@import 'styles/base/extends';
+
+.wrapper {
+  @media screen and (min-width: 1321px) {
+    max-width: 1232px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1320px) {
+    @include wrapper-constructor;
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: 792px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 377px) and (max-width: 880px) {
+    @include wrapper-constructor;
+  }
+
+  @media screen and (max-width: 376px) {
+    max-width: 303px;
+    margin: 0 auto;
+  }
+}
+
+.services {
+  &__header {
+    @include flex-constructor($direction: column, $justify: normal, $gap: 5px);
+    margin: 75px 0 50px;
+  }
+
+  &__title {
+    @include desktop-h1-text;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h1-text;
+    }
+
+    @media screen and (max-width: 376px) {
+      @include mobile-h1-text;
+    }
+  }
+
+  &__subtitle {
+    @include desktop-h3-text-colorful;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h3-text-colorful;
+    }
+
+    @media screen and (max-width: 376px) {
+      @include mobile-h3-text-colorful;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 160px);
+    justify-items: stretch;
+    justify-content: space-between;
+    row-gap: 60px;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 250px);
+      justify-content: space-evenly;
+      row-gap: 96px;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media screen and (max-width: 620px) {
+      grid-template-columns: repeat(2, 180px);
+    }
+
+    @media screen and (max-width: 580px) {
+      grid-template-columns: 303px;
+      grid-template-rows: auto;
+      row-gap: 70px;
+    }
+  }
+}

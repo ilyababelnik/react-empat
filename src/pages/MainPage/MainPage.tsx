@@ -1,11 +1,17 @@
-import HeroSection from 'components/MainPage/HeroSection';
-import AdvantageSection from 'components/MainPage/AdvantageSection';
-import PossibilitiesSections from 'components/MainPage/PossibilitiesSections';
-import RewardsSection from 'components/MainPage/RewardsSection';
-import FeedbackSection from 'components/MainPage/FeedbackSection';
+import { useEffect } from 'react';
+import HeroSection from 'modules/HeroSection';
+import AdvantageSection from 'modules/AdvantageSection';
+import PossibilitiesSections from 'modules/PossibilitiesSections';
+import RewardsSection from 'modules/RewardsSection';
+import FeedbackSection from 'modules/FeedbackSection';
 import style from './MainPage.module.scss';
 
-const MainPage: React.FC = () => (
+const MainPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
     <>
       <div className={style.wrapper}>
         <HeroSection />
@@ -18,5 +24,6 @@ const MainPage: React.FC = () => (
       </div>
     </>
   );
+};
 
 export default MainPage;

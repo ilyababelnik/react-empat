@@ -1,0 +1,48 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.contact {
+  &__wrapper {
+    background: $secondary-background-color;
+    border-top: $accent-border;
+    border-bottom: $accent-border;
+    margin-bottom: 150px;
+
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 100px;
+    }
+
+    @media screen and (max-width: 376px) {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__info {
+    &_wrapper {
+      padding: 45px 0;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: space-evenly;
+      align-items: center;
+      row-gap: 20px;
+      grid-template-areas:
+        'telephone mail'
+        'schedule address';
+
+      @media screen and (max-width: 600px) {
+        padding: 43px 0 45px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'address'
+          'telephone'
+          'schedule'
+          'mail';
+        justify-content: center;
+        max-width: 226px;
+        margin: 0 auto;
+        row-gap: 10px;
+      }
+    }
+  }
+}

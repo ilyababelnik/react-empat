@@ -1,0 +1,65 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+
+.modal {
+  margin: auto;
+  width: 50%;
+  box-shadow: $default-box-shadow;
+  border: $accent-border;
+  overflow-y: hidden;
+  padding: 20px;
+  border-radius: $main-border-radius;
+  animation: fadeIn 0.5s forwards;
+
+  @media screen and (max-width: 450px) {
+    width: 80%;
+    animation: fadeInMobile 0.5s forwards;
+  }
+
+  &__wrapper {
+    @include flex-constructor($gap: 20px);
+  }
+
+  &::backdrop {
+    background-color: $main-background-color;
+    opacity: 0.9;
+  }
+
+  &__content {
+    @include flex-constructor($direction: column, $align: flex-start, $gap: 20px);
+  }
+
+  &__title {
+    @include desktop-h3-text-colorful($color: $accent-color);
+  }
+
+  &__text {
+    @include desktop-p-text-colorful;
+
+    @media screen and (max-width: 450px) {
+      @include tablet-p-text-colorful;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInMobile {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80%;
+    opacity: 1;
+  }
+}

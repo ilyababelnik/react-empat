@@ -1,0 +1,24 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+
+.social__link {
+  @include flex-constructor($direction: column, $justify: center);
+  padding: 10px;
+  background: $accent-color;
+  border-radius: $main-border-radius;
+  width: 50px;
+  height: 50px;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    background: $accent-color-hover;
+  }
+
+  .social__image {
+    height: 35px;
+    width: 35px;
+  }
+}

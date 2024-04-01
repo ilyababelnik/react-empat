@@ -1,0 +1,30 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.social {
+  &__wrapper {
+    @include flex-constructor($direction: column, $justify: center, $align: flex-start, $gap: 20px);
+
+    @media screen and (max-width: 1024px) {
+      gap: 14px;
+    }
+
+    @media screen and (max-width: 730px) {
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__buttons {
+    @include flex-constructor($justify: normal, $gap: 18px);
+
+    @media screen and (max-width: 730px) {
+      gap: 17px;
+    }
+  }
+
+  &__title {
+    @extend %desktop-h3-text;
+  }
+}

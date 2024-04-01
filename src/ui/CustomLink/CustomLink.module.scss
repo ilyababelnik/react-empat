@@ -1,0 +1,58 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+
+.secondary {
+  @include flex-constructor($display: inline-flex, $justify: center, $gap: 9px);
+  @include link-constructor($color: $main-text-color, $background: $main-background-color, $border: $dark-border);
+  padding: 10px calc(20px + (10 * (100vw - 1440px) / 416)) 10px calc(19px + (10 * (100vw - 1440px) / 416));
+  font-size: calc(16px + 6 * (100vw / 1440));
+
+  &:hover {
+    background: $secondary-background-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px;
+    gap: 2px;
+    font-size: $font-size-medium;
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: $font-size-small;
+  }
+}
+
+.primary {
+  @include flex-constructor($justify: center, $gap: 10px);
+  @include link-constructor($color: $button-text-color, $background: $accent-color, $border: none);
+  padding: calc(20px + (10 * (100vw - 1440px) / 416)) 20px calc(20px + (10 * (100vw - 1440px) / 416)) 20px;
+  font-size: calc(16px + 6 * (100vw / 1440));
+
+  &:hover {
+    background: $accent-color-hover;
+    color: $main-text-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px 20px;
+    font-size: $font-size-medium;
+  }
+
+  @media screen and (max-width: 730px) {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: $font-size-small;
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 12px 20px;
+    font-size: $font-size-small;
+  }
+}
+
+.secondary_icon {
+  @include flex-constructor($justify: center, $gap: 10);
+  background: $main-background-color;
+  border: $dark-border;
+  border-radius: $main-border-radius;
+}

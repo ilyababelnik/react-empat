@@ -1,0 +1,24 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+@import 'styles/base/extends';
+
+.button {
+  background: transparent;
+  @include image-wrapper($width: 20px, $height: 26px);
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include image-wrapper($width: 30px, $height: 40px);
+  }
+
+  &__image {
+    @extend %image;
+  }
+}

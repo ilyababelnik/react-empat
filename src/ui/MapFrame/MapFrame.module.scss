@@ -1,0 +1,43 @@
+@import 'styles/base/variables';
+
+.map {
+  border: $accent-border;
+  width: 349px;
+  height: 159px;
+
+  @media screen and (max-width: 1024px) {
+    width: 350px;
+    height: 161px;
+  }
+
+  @media screen and (max-width: 730px) {
+    width: 303px;
+    height: 159px;
+  }
+}
+
+.contact__map {
+  border: $accent-border;
+  width: 35vw;
+  height: 48vh;
+
+  @media screen and (max-width: 1180px) {
+    width: 28vw;
+    height: auto;
+  }
+
+  @media screen and (max-width: 1180px) {
+    width: 289px;
+    height: 280px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 240px;
+    height: 280px;
+  }
+
+  @media screen and (max-width: 730px) {
+    width: 100%;
+    height: 289px;
+  }
+}

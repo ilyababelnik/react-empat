@@ -1,0 +1,14 @@
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+
+.logo {
+  @extend %logo-text;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    color: $accent-color-hover;
+  }
+}

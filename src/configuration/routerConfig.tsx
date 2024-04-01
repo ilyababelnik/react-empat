@@ -7,7 +7,7 @@ import { Route, createBrowserRouter, createRoutesFromElements } from 'react-rout
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/">
+    <Route path="/react-empat">
       <Route
         index
         element={
@@ -18,16 +18,16 @@ const router = createBrowserRouter(
       />
 
       <Route
-        path="contact"
+        path="/react-empat/contact"
         element={
-          <Layout>
+          <Layout simpleFooterMod>
             <ContactPage />
           </Layout>
         }
       />
 
       <Route
-        path="services"
+        path="/react-empat/services"
         element={
           <Layout>
             <ServicesPage />

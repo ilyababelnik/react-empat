@@ -1,0 +1,55 @@
+@import 'styles/base/variables';
+@import 'styles/base/mixins';
+@import 'styles/base/extends';
+
+.service {
+  @include flex-constructor($direction: column, $justify: center, $gap: 10px);
+  padding: 35px 20px 27px;
+  background: $secondary-background-color;
+  border: $accent-border;
+  box-shadow: $default-box-shadow;
+  border-radius: $large-border-radius;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
+
+  &:hover {
+    box-shadow: $hover-box-shadow;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 33px 20px 27px;
+    gap: 14px;
+  }
+
+  @media screen and (max-width: 376px) {
+    padding: 34px 20px 27px;
+    gap: 10px;
+  }
+
+  &__title {
+    @include desktop-h4-text($color: $main-text-color);
+    text-align: center;
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h4-text($color: $main-text-color);
+    }
+
+    @media screen and (max-width: 376px) {
+      @include desktop-h4-text($color: $main-text-color);
+    }
+  }
+
+  &__image {
+    @extend %image;
+
+    &_wrapper {
+      @include image-wrapper($width: 80px, $height: 80px);
+
+      @media screen and (max-width: 1024px) {
+        @include image-wrapper($width: 120px, $height: 120px);
+      }
+    }
+  }
+}

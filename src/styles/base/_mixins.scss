@@ -2,8 +2,8 @@
   margin: $margin-vertical $margin-horizontal;
 }
 
-@mixin flex-constructor($direction: row, $justify: space-between, $align: center, $gap: 0) {
-  display: flex;
+@mixin flex-constructor($display: flex, $direction: row, $justify: space-between, $align: center, $gap: 0) {
+  display: $display;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
@@ -64,20 +64,103 @@
   color: $color;
 }
 
-@mixin desktop-h4-text($color: $secondary-text-color) {
+@mixin desktop-h3-text-colorful($color: $secondary-text-color) {
   font-family: $main-font;
   font-style: $text-style;
-  font-weight: $regular-bold;
+  font-weight: $semi-bold;
+  font-size: $font-size-desktop-h3;
+  line-height: $line-height-large;
+  color: $color;
+}
+
+@mixin tablet-h3-text-colorful($color: $secondary-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  color: $color;
+}
+
+@mixin mobile-h3-text-colorful($color: $secondary-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  color: $color;
+}
+
+@mixin desktop-h4-text($color: $secondary-text-color, $fontWeight: $regular-bold) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $fontWeight;
   font-size: $font-size-desktop-h4;
   line-height: $line-height-medium;
   color: $color;
 }
 
-@mixin tablet-h4-text($color: $secondary-text-color) {
+@mixin tablet-h4-text($color: $secondary-text-color, $fontWeight: $regular-bold) {
   font-family: $main-font;
   font-style: $text-style;
-  font-weight: $regular-bold;
+  font-weight: $fontWeight;
   font-size: $font-size-medium;
   line-height: $line-height-medium;
   color: $color;
+}
+
+@mixin mobile-h4-text($color: $secondary-text-color, $fontWeight: $regular-bold) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $fontWeight;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  color: $color;
+}
+
+@mixin desktop-p-text-colorful($color: $main-text-color) {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $regular-bold;
+  font-size: $font-size-desktop-p;
+  line-height: $line-height-medium;
+  color: $color;
+}
+
+@mixin tablet-p-text-colorful($color: $main-text-color) {
+  font-family: $main-font;
+  font-size: $font-size-small;
+  font-weight: $regular-bold;
+  font-size: $font-size-small;
+  line-height: $line-height-medium;
+  color: $color;
+}
+
+@mixin mobile-p-text-colorful($color: $main-text-color) {
+  font-family: $main-font;
+  font-size: $font-size-small;
+  font-weight: $regular-bold;
+  font-size: $font-size-extra-small;
+  line-height: $line-height-small;
+  color: $color;
+}
+
+@mixin image-wrapper($width: auto, $height: auto) {
+  max-height: $height;
+  max-width: $width;
+}
+
+@mixin link-constructor($color: $button-text-color, $background: $accent-color, $border: none) {
+  background: $background;
+  border: $border;
+  border-radius: $main-border-radius;
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $semi-bold;
+  line-height: $line-height-medium;
+  color: $color;
+  transition: $main-transition-effect;
+  -moz-transition: $main-transition-effect;
+  -webkit-transition: $main-transition-effect;
+  -o-transition: $main-transition-effect;
 }

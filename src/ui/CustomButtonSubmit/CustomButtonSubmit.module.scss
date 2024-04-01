@@ -1,0 +1,27 @@
+@import 'styles/base/mixins';
+@import 'styles/base/variables';
+@import 'styles/base/extends';
+@import 'styles/base/fonts';
+
+.button {
+  @include flex-constructor($justify: center, $gap: 10px);
+  @include link-constructor;
+  padding: calc(20px + (10 * (100vw - 1440px) / 416)) 20px calc(20px + (10 * (100vw - 1440px) / 416)) 20px;
+  font-size: calc(16px + 6 * (100vw / 1440));
+
+  &:hover {
+    background: $accent-color-hover;
+    color: $main-text-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px 20px;
+    font-size: $font-size-medium;
+  }
+
+  @media screen and (max-width: 730px) {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: $font-size-small;
+  }
+}

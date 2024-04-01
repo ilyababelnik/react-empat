@@ -19,13 +19,13 @@
   color: $main-text-color;
 
   @media screen and (max-width: 1024px) {
-    font-size: $font-size-medium;
+    font-size: $font-size-tablet-h3;
     line-height: $line-height-medium;
   }
 
   @media screen and (max-width: 376px) {
-    font-size: $font-size-small;
-    line-height: $line-height-small;
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
   }
 }
 
@@ -52,6 +52,24 @@
   }
 }
 
+%label {
+  font-family: $main-font;
+  font-style: $text-style;
+  font-weight: $regular-bold;
+  font-size: $font-size-desktop-p;
+  line-height: $line-height-medium;
+  color: $main-text-color;
+
+  @media screen and (max-width: 1024px) {
+    font-size: $font-size-small;
+  }
+
+  @media screen and (max-width: 376px) {
+    font-size: $font-size-extra-small;
+    line-height: $line-height-small;
+  }
+}
+
 %logo-text {
   color: $accent-color;
   font-family: $main-font;
@@ -64,4 +82,48 @@
 %title-decoration {
   padding: 0px 0px 0px 20px;
   border-left: $title-border;
+}
+
+%image {
+  height: 100%;
+  width: 100%;
+}
+
+%form-field {
+  width: 100%;
+  padding: 22px 21px;
+  border-radius: $main-border-radius;
+  border: $inactive-border;
+  caret-color: $accent-color;
+  background: $main-background-color;
+
+  @media screen and (max-width: 1024px) {
+    padding: 12px 10px;
+  }
+
+  &:hover {
+    border: $accent-border;
+  }
+
+  &:not(:placeholder-shown):focus,
+  &:focus {
+    border: $accent-border;
+  }
+
+  &:not(:placeholder-shown):valid {
+    border: $valid-border;
+  }
+}
+
+%error-field {
+  border: $invalid-border;
+  width: 100%;
+  background: $main-background-color;
+  padding: 22px 21px;
+  border-radius: $main-border-radius;
+  caret-color: $accent-color;
+
+  @media screen and (max-width: 1024px) {
+    padding: 12px 10px;
+  }
 }

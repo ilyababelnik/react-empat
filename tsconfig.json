@@ -20,6 +20,10 @@
       "constants/*": ["constants/*"],
       "pages/*": ["pages/*"],
       "styles/*": ["styles/*"],
+      "assets/*": ["assets/*"],
+      "types/*": ["types/*"],
+      "ui/*": ["ui/*"],
+      "modules/*": ["modules/*"],
     },
 
     /* Linting */

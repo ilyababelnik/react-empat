@@ -1,0 +1,121 @@
+@import 'styles/base/variables';
+@import 'styles/base/fonts';
+@import 'styles/base/mixins';
+
+.wrapper {
+  @media screen and (min-width: 1321px) {
+    max-width: 1232px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1320px) {
+    @include wrapper-constructor;
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: 792px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 377px) and (max-width: 880px) {
+    @include wrapper-constructor;
+  }
+
+  @media screen and (max-width: 376px) {
+    max-width: 303px;
+    margin: 0 auto;
+  }
+}
+
+.error {
+  &__wrapper {
+    @include flex-constructor($direction: column, $justify: center, $gap: 45px);
+    margin-top: 75px;
+  }
+
+  &__text {
+    @include desktop-h2-text($color: $main-text-color);
+
+    @media screen and (max-width: 1024px) {
+      @include tablet-h2-text($color: $main-text-color);
+    }
+  }
+
+  &__second_number {
+    @include desktop-h2-text($color: $accent-color-hover);
+    line-height: normal;
+    display: inline-block;
+    position: relative;
+  }
+
+  &__first_number,
+  &__third_number {
+    @include desktop-h2-text;
+    line-height: normal;
+    display: inline-block;
+    position: relative;
+  }
+
+  &__first_number {
+    transform-origin: 50% 100% 0px;
+    transform: rotateX(0);
+    animation: easyoutelastic 8s infinite;
+  }
+
+  &__third_number {
+    transform-origin: 100% 100% 0px;
+    transform: rotate(0deg);
+    animation: rotatedrop 8s infinite;
+  }
+}
+
+@keyframes easyoutelastic {
+  0% {
+    transform: rotateX(0);
+  }
+  9% {
+    transform: rotateX(210deg);
+  }
+  13% {
+    transform: rotateX(150deg);
+  }
+  16% {
+    transform: rotateX(200deg);
+  }
+  18% {
+    transform: rotateX(170deg);
+  }
+  20% {
+    transform: rotateX(180deg);
+  }
+  60% {
+    transform: rotateX(180deg);
+  }
+  80% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes rotatedrop {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(30deg);
+  }
+  15% {
+    transform: rotate(90deg);
+  }
+  70% {
+    transform: rotate(90deg);
+  }
+  80% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
